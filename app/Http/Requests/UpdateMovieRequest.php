@@ -25,7 +25,7 @@ class UpdateMovieRequest extends FormRequest
     {
         return [
             'title' => ['required', 'string', 'max:191'],
-            'imdb_number' => ['required', 'string', 'max:191'],
+            'imdb_number' => ['required', 'max:191'],
             'year' => ['required', 'string', 'max:191'],
             'poster' => ['sometimes']
         ];

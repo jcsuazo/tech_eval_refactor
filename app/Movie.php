@@ -14,9 +14,11 @@ class Movie extends Model
 
     public function store_movie_to_database($request)
     {
-        $name = substr($request->title, 0, 5) . '_' . time() . '.' . explode(';', explode('/', $request->poster)[1])[0];
-        \Image::make($request->poster)->resize(320, 200)->save(public_path('img/profile/') . $name);
-        $request->merge(['poster' => $name]);
+        if ($request->poster !== 'movie.js') {
+            $name = substr($request->title, 0, 5) . '_' . time() . '.' . explode(';', explode('/', $request->poster)[1])[0];
+            \Image::make($request->poster)->resize(320, 200)->save(public_path('img/profile/') . $name);
+            $request->merge(['poster' => $name]);
+        }
     }
     public function update_movie($request)
     {
