@@ -12,6 +12,12 @@ class PagesController extends Controller
     {
         $this->middleware('auth');
     }
+
+    //Home
+    public function homeIndex()
+    {
+        return view('pages.dashboard');
+    }
     //user
     public function userIndex()
     {

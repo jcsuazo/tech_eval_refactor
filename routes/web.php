@@ -16,7 +16,7 @@ Route::get('/', function () {
 //Login and register routes
 Auth::routes();
 //Home Routes
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'PagesController@homeIndex')->name('home');
 //User Routes
 Route::get('/users', 'PagesController@userIndex');
 Route::get('/users/{user}', 'PagesController@userShow');
