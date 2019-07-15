@@ -27,7 +27,7 @@ class StoreMovieRequest extends FormRequest
             'title' => ['required', 'string', 'max:191'],
             'imdb_number' => ['required', 'string', 'max:191'],
             'year' => ['required', 'string', 'max:191'],
-            'poster' => ['required'],
+            'poster' => ['sometimes', 'required'],
         ];
     }
 }

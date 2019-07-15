@@ -5,15 +5,20 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Str;
 use Laravel\Passport\Passport;
-use Illuminate\Support\Facades\Hash;
 
 class UsersTest extends TestCase
 {
     use RefreshDatabase, WithFaker;
     /** @test */
     public function a_auth_user_can_see_his_information()
+    {
+        $this->withoutExceptionHandling();
+        $user = Passport::actingAs(factory(\App\User::class)->create(['role' => 'admin']));
+        $this->get('/api/getUser')->assertSee($user->id)->assertSee($user->name)->assertSee($user->email);
+    }
+    /** @test */
+    public function a_auth_user_can_see_his_information_on_json()
     {
         $this->withoutExceptionHandling();
         Passport::actingAs(factory(\App\User::class)->create(['role' => 'admin']));
