@@ -119,7 +119,50 @@ Header
 -Authorization => Bearer 'access_token'
 
 ```
-3.Add Favorite Movie
+6.Find a user by name
+
+make a GET request to /api/findUser?q={name_of_user}
+```bash
+Header
+-Accept => application/json
+-Content-Type => application/json
+-Authorization => Bearer 'access_token'
+
+```
+7.Create movie (POST)
+
+The user for this access token need to be admin if not will not allow to create a user
+make a POST request to /api/movie
+```bash
+Header
+-Accept => application/json
+-Authorization => Bearer 'access_token'
+
+form
+'form_params' => [
+        'title' => 'movie_title',
+        'imdb_number' => 'imdb_number_number',
+        'year' => 'movie_year',
+        'poster" => 'movie_image_in_base64'
+    ],
+```
+8.Get Movie By name
+
+make a Get request to /api/findMovie?q={movie_title}
+```bash
+Header
+-Accept => application/json
+-Authorization => Bearer 'access_token'
+```
+9.Get user Favorite Movies
+
+make a Get request to /api/user/{user_id}
+```bash
+Header
+-Accept => application/json
+-Authorization => Bearer 'access_token'
+```
+10.Add Favorite Movie
 
 make a Post request to api/favorites
 ```bash
@@ -129,23 +172,8 @@ Header
 
 'form_params' => [
         'user_id' => 'user_id',
-        'movie_id' => 'movie_id',
-        'favorite' => 'boolean',
+        'movie_id' => 'movie_id'
     ],
 ```
-4.Get user Favorite Movies
 
-make a Get request to /api/user/{user_id}
-```bash
-Header
--Accept => application/json
--Authorization => Bearer 'access_token'
-```
-5.Get Movie By name
 
-make a Get request to /api/findMovie?q={movie_title}
-```bash
-Header
--Accept => application/json
--Authorization => Bearer 'access_token'
-```
