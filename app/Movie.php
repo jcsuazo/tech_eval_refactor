@@ -1,0 +1,30 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Movie extends Model
+{
+    protected $fillable = ['title', 'imdb_number', 'year', 'poster'];
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
+    public function store_movie_to_database($request)
+    {
+        $name = substr($request->title, 0, 5) . '_' . time() . '.' . explode(';', explode('/', $request->poster)[1])[0];
+        \Image::make($request->poster)->save(public_path('img/profile/') . $name);
+        // ->resize(128, 128)
+        $request->merge(['poster' => $name]);
+    }
+    public function update_movie($request)
+    {
+        if ($request->poster !== $this->poster) {
+            $name = substr($request->title, 0, 5) . '_' . time() . '.' . explode(';', explode('/', $request->poster)[1])[0];
+            \Image::make($request->poster)->save(public_path('img/profile/') . $name);
+            $request->merge(['poster' => $name]);
+        }
+        $this->update($request->all());
+    }
+}
