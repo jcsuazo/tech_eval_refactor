@@ -11,12 +11,11 @@ class Movie extends Model
     {
         return $this->belongsToMany(User::class);
     }
-    //70
+
     public function store_movie_to_database($request)
     {
         $name = substr($request->title, 0, 5) . '_' . time() . '.' . explode(';', explode('/', $request->poster)[1])[0];
         \Image::make($request->poster)->resize(320, 200)->save(public_path('img/profile/') . $name);
-        // ->resize(128, 128)
         $request->merge(['poster' => $name]);
     }
     public function update_movie($request)
