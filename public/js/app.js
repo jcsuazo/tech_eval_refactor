@@ -1995,6 +1995,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -2108,6 +2110,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -45217,22 +45221,27 @@ var render = function() {
                       _c(
                         "div",
                         {
-                          staticClass: "card-header text-muted border-bottom-0"
+                          staticClass:
+                            "card-header text-muted border-bottom-0 fix-Dashboard-header"
                         },
                         [_vm._v(_vm._s(movie.title))]
                       ),
                       _vm._v(" "),
                       _c("div", { staticClass: "card-body pt-0" }, [
                         _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-12 text-center" }, [
-                            _c("img", {
-                              staticClass: "movieImage",
-                              attrs: {
-                                src: "/img/profile/" + movie.poster,
-                                alt: ""
-                              }
-                            })
-                          ]),
+                          _c(
+                            "div",
+                            { staticClass: "col-12 text-center mt-4" },
+                            [
+                              _c("img", {
+                                staticClass: "movieImage",
+                                attrs: {
+                                  src: "/img/profile/" + movie.poster,
+                                  alt: ""
+                                }
+                              })
+                            ]
+                          ),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-12 mt-2" }, [
                             _c("p", { staticClass: "text-muted h5" }, [
@@ -45646,22 +45655,27 @@ var render = function() {
                       _c(
                         "div",
                         {
-                          staticClass: "card-header text-muted border-bottom-0"
+                          staticClass:
+                            "card-header text-muted border-bottom-0 fix-Dashboard-header"
                         },
                         [_vm._v(_vm._s(movie.title))]
                       ),
                       _vm._v(" "),
                       _c("div", { staticClass: "card-body pt-0" }, [
                         _c("div", { staticClass: "row" }, [
-                          _c("div", { staticClass: "col-12 text-center" }, [
-                            _c("img", {
-                              staticClass: "movieImage",
-                              attrs: {
-                                src: "/img/profile/" + movie.poster,
-                                alt: ""
-                              }
-                            })
-                          ]),
+                          _c(
+                            "div",
+                            { staticClass: "col-12 text-center mt-4" },
+                            [
+                              _c("img", {
+                                staticClass: "movieImage",
+                                attrs: {
+                                  src: "/img/profile/" + movie.poster,
+                                  alt: ""
+                                }
+                              })
+                            ]
+                          ),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-12 mt-2" }, [
                             _c("p", { staticClass: "text-muted h5" }, [

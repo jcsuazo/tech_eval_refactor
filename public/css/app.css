@@ -30535,3 +30535,13 @@ readers do not read off random characters that represent icons */
   margin-top: -40px;
 }
 
+.fix-Dashboard-header {
+  height: 70px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+

@@ -67,10 +67,12 @@
                 :key="movie.id"
               >
                 <div class="card bg-light">
-                  <div class="card-header text-muted border-bottom-0">{{movie.title}}</div>
+                  <div
+                    class="card-header text-muted border-bottom-0 fix-Dashboard-header"
+                  >{{movie.title}}</div>
                   <div class="card-body pt-0">
                     <div class="row">
-                      <div class="col-12 text-center">
+                      <div class="col-12 text-center mt-4">
                         <img :src="'/img/profile/'+movie.poster" alt class="movieImage" />
                       </div>
                       <div class="col-12 mt-2">
