@@ -2301,7 +2301,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      movies: {},
+      movies: [],
       number_of_users: "",
       number_of_movies: "",
       number_of_favorites_movies: "",

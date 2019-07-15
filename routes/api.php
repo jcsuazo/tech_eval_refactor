@@ -21,4 +21,4 @@ Route::get('findUser', 'API\UserController@findUser')->middleware('auth:api');
 Route::apiResource('movie', 'API\MovieController')->middleware('auth:api');
 Route::get('findMovie', 'API\MovieController@findMovie')->middleware('auth:api');
 Route::post('favorites', 'API\UserController@favorite')->middleware('auth:api');
-Route::apiResource('dashboard', 'API\DashboardController')->middleware('auth:api');
+Route::get('dashboard', 'API\DashboardController@index')->middleware('auth:api');

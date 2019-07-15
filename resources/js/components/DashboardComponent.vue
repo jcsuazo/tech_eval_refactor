@@ -192,7 +192,7 @@
 export default {
   data() {
     return {
-      movies: {},
+      movies: [],
       number_of_users: "",
       number_of_movies: "",
       number_of_favorites_movies: "",
@@ -277,8 +277,7 @@ export default {
       });
     }
   },
-  mounted() {
-  },
+  mounted() {},
   created() {
     this.loadMovies();
   }
