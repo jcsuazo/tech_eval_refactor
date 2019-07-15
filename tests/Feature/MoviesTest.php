@@ -23,7 +23,6 @@ class MoviesTest extends TestCase
     {
         $this->withoutExceptionHandling();
         Passport::actingAs(factory(\App\User::class)->create(['role' => 'admin']));
-        // $data = factory(\App\Movie::class)->raw();
         $data = [
             "title" => "revenge of the fallen",
             "imdb_number" => "bobytss44y",
