@@ -4,31 +4,27 @@ use App\User;
 use App\Movie;
 use App\Movie_User;
 use Illuminate\Support\Facades\DB;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
 
+//Testing Route
 Route::get('/test', function (User $user) {
     //
 });
+//Login Routes
 Route::get('/', function () {
     return view('auth.login');
 });
-
+//Login and register routes
 Auth::routes();
-
+//Home Routes
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('/users', 'UsersController')->middleware('auth');
-Route::resource('/movies', 'MovieController')->middleware('auth');
-Route::get('/browse', 'MovieController@browse')->middleware('auth');
-Route::view('/dev', 'pages.developer')->middleware('auth');
+//User Routes
+Route::get('/users', 'PagesController@userIndex');
+Route::get('/users/{user}', 'PagesController@userShow');
+//Movies
+Route::get('/movies', 'PagesController@moviesIndex');
+Route::get('/browse', 'PagesController@moviesBrowse');
+//Dev
+Route::get('/dev', 'PagesController@dev');
 
 
 // select movies.*, count(movies.id) as favorite_count FROM movies JOIN movie_user ON movies.id = movie_user.movie_id GROUP BY movies.id ORDER BY `favorite_count` DESC
